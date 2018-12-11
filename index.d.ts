@@ -89,6 +89,15 @@ declare namespace node_warc {
 
     }
 
+    class RequestLibWARCWriter extends WARCWriterBase {
+        constructor(...args: any[]);
+
+        generateWarcEntry(...args: any[]): void;
+
+        static prefixed: boolean;
+
+    }
+
     class RemoteChromeRequestCap {
         constructor(...args: any[]);
 
