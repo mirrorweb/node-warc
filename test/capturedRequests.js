@@ -1,7 +1,7 @@
-import test from 'ava'
-import CapturedRequest from '../lib/requestCapturers/capturedRequest'
-import fs from 'fs-extra'
-import { capturedReqTestData } from './helpers/filePaths'
+const test = require('ava')
+const CapturedRequest = require('../lib/requestCapturers/capturedRequest')
+const fs = require('fs-extra')
+const { capturedReqTestData } = require('./helpers/filePaths')
 
 let d
 test.before(async t => {

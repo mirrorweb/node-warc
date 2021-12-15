@@ -1,4 +1,4 @@
-export class FakeElectronDebugger {
+class FakeElectronDebugger {
   constructor () {
     this.calls = 0
     this.commandSent = null
@@ -25,7 +25,7 @@ export class FakeElectronDebugger {
   }
 }
 
-export class FakeNetwork {
+class FakeNetwork {
   constructor (reqs) {
     this.reqs = reqs
   }
@@ -144,4 +144,10 @@ export class FakeNavMan {
   reqFinished (info) {
     this.calls.reqFinished += 1
   }
+}
+
+module.exports = {
+  FakeElectronDebugger,
+  FakeNetwork,
+  FakeNavMan
 }

@@ -1,10 +1,8 @@
-const test = require('ava')
-const { Observable } = require('rxjs')
-const { map } = require('rxjs/operators')
-const AutoWARCParser = require('../lib/parsers')
-const WARCGzParser = require('../lib/parsers/warcGzParser')
-const WARCParser = require('../lib/parsers/warcParser')
-const { warcs } = require('./helpers/filePaths')
+import test from 'ava'
+import { Observable } from 'rxjs'
+import { map } from 'rxjs/operators'
+import { AutoWARCParser, WARCParser, WARCGzParser } from '../lib/parsers'
+import { warcs } from './helpers/filePaths'
 
 test.serial('AutoWARCParser should parse gzipped warcs', t => {
   t.plan(32)
@@ -13,12 +11,14 @@ test.serial('AutoWARCParser should parse gzipped warcs', t => {
     parser.on('record', record => {
       observer.next(record)
     })
-    parser.on('done', finalRecord => {
-      observer.next(finalRecord)
+    parser.on('done', () => {
       observer.complete()
     })
     parser.start()
-    t.false(parser.start(), 'AutoWARCParser.start should return false when started')
+    t.false(
+      parser.start(),
+      'AutoWARCParser.start should return false when started'
+    )
     t.false(
       parser.parseWARC(),
       'AutoWARCParser.parseWARC should return false when started'
@@ -34,12 +34,14 @@ test.serial('AutoWARCParser should parse non-gzipped warcs', t => {
     parser.on('record', record => {
       observer.next(record)
     })
-    parser.on('done', finalRecord => {
-      observer.next(finalRecord)
+    parser.on('done', () => {
       observer.complete()
     })
     parser.start()
-    t.false(parser.start(), 'AutoWARCParser.start should return false when started')
+    t.false(
+      parser.start(),
+      'AutoWARCParser.start should return false when started'
+    )
     t.false(
       parser.parseWARC(),
       'AutoWARCParser.parseWARC should return false when started'
@@ -58,8 +60,7 @@ test.serial(
       parser.on('record', record => {
         observer.next(record)
       })
-      parser.on('done', finalRecord => {
-        observer.next(finalRecord)
+      parser.on('done', () => {
         if (didFirst) {
           observer.complete()
         } else {
@@ -68,7 +69,10 @@ test.serial(
         }
       })
       parser.start()
-      t.false(parser.start(), 'AutoWARCParser.start should return false when started')
+      t.false(
+        parser.start(),
+        'AutoWARCParser.start should return false when started'
+      )
       t.false(
         parser.parseWARC(),
         'AutoWARCParser.parseWARC should return false when started'
@@ -88,12 +92,14 @@ test.serial('WARCGzParser should parse gzipped warcs', t => {
     parser.on('record', record => {
       observer.next(record)
     })
-    parser.on('done', finalRecord => {
-      observer.next(finalRecord)
+    parser.on('done', () => {
       observer.complete()
     })
     parser.start()
-    t.false(parser.start(), 'AutoWARCParser.start should return false when started')
+    t.false(
+      parser.start(),
+      'AutoWARCParser.start should return false when started'
+    )
     t.false(
       parser.parseWARC(),
       'AutoWARCParser.parseWARC should return false when started'
@@ -112,12 +118,14 @@ test.serial('WARCParser should parse non-gzipped warcs', t => {
     parser.on('record', record => {
       observer.next(record)
     })
-    parser.on('done', finalRecord => {
-      observer.next(finalRecord)
+    parser.on('done', () => {
       observer.complete()
     })
     parser.start()
-    t.false(parser.start(), 'AutoWARCParser.start should return false when started')
+    t.false(
+      parser.start(),
+      'AutoWARCParser.start should return false when started'
+    )
     t.false(
       parser.parseWARC(),
       'AutoWARCParser.parseWARC should return false when started'

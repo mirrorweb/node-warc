@@ -1,9 +1,9 @@
-import test from 'ava'
-import fs from 'fs-extra'
-import { requestsJson } from './helpers/filePaths'
-import { FakeNetwork, FakeNavMan } from './helpers/mocks'
-import { RemoteChromeCapturer, ElectronCapturer } from '../lib/requestCapturers'
-import CapturedRequest from '../lib/requestCapturers/capturedRequest'
+const test = require('ava')
+const fs = require('fs-extra')
+const { requestsJson } = require('./helpers/filePaths')
+const { FakeNetwork, FakeNavMan } = require('./helpers/mocks')
+const { RemoteChromeCapturer, ElectronCapturer } = require('../lib/requestCapturers')
+const CapturedRequest = require('../lib/requestCapturers/capturedRequest')
 
 let rawRequests
 const numCaptReqs = 194

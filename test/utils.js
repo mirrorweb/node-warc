@@ -1,9 +1,9 @@
-import test from 'ava'
-import { FakeElectronDebugger } from './helpers/mocks'
-import GZD from '../lib/parsers/gzipDetector'
-import { isEmptyPlainObject, getResBodyElectron } from '../lib/utils'
-import ElectronGetResError from '../lib/utils/electronGetResError'
-import { warcs } from './helpers/filePaths'
+const test = require('ava')
+const { FakeElectronDebugger } = require('./helpers/mocks')
+const GZD = require('../lib/parsers/gzipDetector')
+const { isEmptyPlainObject, getResBodyElectron } = require('../lib/utils')
+const ElectronGetResError = require('../lib/utils/electronGetResError')
+const { warcs } = require('./helpers/filePaths')
 
 test('getResBodyElectron', async t => {
   const fed = new FakeElectronDebugger()

@@ -1,7 +1,7 @@
-import test from 'ava'
-import WARCRecorderBuilder from '../lib/warcRecordBuilder'
-import warcRecords from '../lib/warcRecords'
-import buildKeys from '../lib/warcRecordBuilder/buildKeys'
+const test = require('ava')
+const WARCRecorderBuilder = require('../lib/warcRecordBuilder')
+const warcRecords = require('../lib/warcRecords')
+const buildKeys = require('../lib/warcRecordBuilder/buildKeys')
 
 test.beforeEach(t => {
   t.context.builder = new WARCRecorderBuilder()
