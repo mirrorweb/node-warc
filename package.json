@@ -42,25 +42,25 @@
     }
   },
   "dependencies": {
-    "bluebird": "^3.5.1",
-    "eventemitter3": "^3.1.0",
-    "fs-extra": "^7.0.0",
+    "bluebird": "^3.7.2",
+    "eventemitter3": "^4.0.7",
+    "fs-extra": "^10.1.0",
     "lodash.isempty": "^4.4.0",
     "lodash.startcase": "^4.4.0",
-    "moment": "^2.22.2",
-    "readable-stream": "^3.0.2",
-    "untildify": "^3.0.3",
-    "uuid": "^3.3.2"
+    "moment": "^2.29.4",
+    "readable-stream": "^4.2.0",
+    "untildify": "^4.0.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
+    "ava": "^4.3.3",
     "esdoc": "^1.1.0",
-    "nyc": "^12.0.2",
-    "prettier-standard": "^8.0.1",
+    "nyc": "^15.1.0",
+    "prettier-standard": "^16.4.1",
     "pretty-time": "^1.1.0",
-    "rxjs": "^6.2.2",
-    "snazzy": "^7.1.1",
-    "standard": "^11.0.1"
+    "rxjs": "^7.5.7",
+    "snazzy": "^9.0.0",
+    "standard": "^17.0.0"
   },
   "ava": {
     "files": [
